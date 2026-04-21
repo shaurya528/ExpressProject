@@ -1,5 +1,5 @@
 
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -33,5 +33,15 @@ try{
 }catch(err){
     console.error("unable to fetch task by Status")
     return [];
+}
+}
+export const saveTaskToFIle=(newTask)=>{
+try{
+    const AllTask=getAllTask();
+    AllTask.push(newTask);
+    writeFileSync(Data_file,JSON.stringify(AllTask,null,2),'utf-8');
+}
+catch(err){
+console.error("unable to save data in file")
 }
 }
