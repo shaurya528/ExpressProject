@@ -1,6 +1,6 @@
 import  express from "express";
-import { getAllTask, getTaskById, getTaskByStatus } from "./Module/DataAccess.js";
-import { addTask } from "./Controller/TaskController.js";
+import { getAllTask, getTaskById, getTaskByStatus,DeleteTask } from "./Module/DataAccess.js";
+import { addTask} from "./Controller/TaskController.js";
 const app =  express()
 app.get("/",(req,res)=>{
     const res_Data= JSON.stringify(getAllTask());
@@ -20,6 +20,11 @@ app.post("/profile",(req,res)=>{
     console.log(req.body)
    addTask(req,res);
 })
+app.delete("/task/:id",(req,res)=>{
+    DeleteTask(req,res);
+    res.json({ message: "Task deleted" });
+})
+
 const  PORT=3004;
 app.listen(PORT,()=>{
     console.log("server running")

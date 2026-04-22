@@ -45,3 +45,10 @@ catch(err){
 console.error("unable to save data in file")
 }
 }
+export const saveAllTask=(task)=>{
+try{
+    writeFileSync(Data_file,JSON.stringify(task,null,2),'utf-8');
+}catch(err){
+  console.error("unable  to save all task in data file")
+}
+}
