@@ -1,5 +1,19 @@
 [
   {
+    "id": 1,
+    "title": "Quarterly Financial Audit",
+    "description": "Review all expense reports and prepare balance sheets for Q1 review.",
+    "status": "Completed",
+    "dueDate": "2026-03-31"
+  },
+  {
+    "id": 2,
+    "title": "Server Migration",
+    "description": "Move legacy data to the new cloud infrastructure and verify integrity.",
+    "status": "Completed",
+    "dueDate": "2026-04-02"
+  },
+  {
     "id": 3,
     "title": "Client Onboarding: Acme Corp",
     "description": "Send welcome package, set up Slack channel, and schedule kickoff meeting.",
@@ -12,5 +26,68 @@
     "description": "Mandate two-factor authentication for all internal administrative accounts.",
     "status": "Pending",
     "dueDate": "2026-05-01"
+  },
+  {
+    "id": 5,
+    "title": "Design System Revamp",
+    "description": "Update button components and typography scales in the Figma master file.",
+    "status": "In Progress",
+    "dueDate": "2026-05-10"
+  },
+  {
+    "id": 6,
+    "title": "Hire Senior DevOps Engineer",
+    "description": "Review final round interview notes and send out the offer letter.",
+    "status": "Pending",
+    "dueDate": "2026-05-12"
+  },
+  {
+    "id": 7,
+    "title": "API Documentation Update",
+    "description": "Document the new webhooks and generate Swagger UI updates.",
+    "status": "Completed",
+    "dueDate": "2026-04-20"
+  },
+  {
+    "id": 8,
+    "title": "Annual Performance Reviews",
+    "description": "Conduct 1-on-1 feedback sessions with the engineering team.",
+    "status": "In Progress",
+    "dueDate": "2026-05-25"
+  },
+  {
+    "id": 9,
+    "title": "Marketing Campaign Launch",
+    "description": "Deploy social media ads and coordinate the email newsletter blast.",
+    "status": "Pending",
+    "dueDate": "2026-06-01"
+  },
+  {
+    "id": 10,
+    "title": "Database Optimization",
+    "description": "Add indexes to the 'orders' table to improve query performance.",
+    "status": "Completed",
+    "dueDate": "2026-04-25"
+  },
+  {
+    "id": 11,
+    "title": "Mobile App Bug Fixes",
+    "description": "Resolve the login crash issue reported on Android 14 devices.",
+    "status": "In Progress",
+    "dueDate": "2026-05-05"
+  },
+  {
+    "id": 13,
+    "title": "hardware License Renewal",
+    "description": "Renew the annual subscription for the cloud hosting and IDE licenses.",
+    "status": "Pending",
+    "dueDate": "2026-06-15"
+  },
+  {
+    "id": 14,
+    "title": "software License Renewal",
+    "description": "Renew the annual subscription for the cloud hosting and IDE licenses.",
+    "status": "Pending",
+    "dueDate": "2026-06-15"
   }
 ]
