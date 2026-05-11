@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt  from "bcrypt";
 
 const{Schema,model}=mongoose;
  const users_data=new Schema({
@@ -7,12 +8,24 @@ const{Schema,model}=mongoose;
     password:String,
     number:Number
  })
+users_data.pre('save',async function (next){
+if(!this.isModified('password')) 
+  return next;
+
+try{
+  const salt= await bcrypt.genSalt(10);
+  this.password=await bcrypt.hash(this.password,salt);
+  next;
+}catch(err){
+  next(err);
+}
 
 
+
+})
  
- users_data.methods.comparePassword=function(userpasswod){
-   return userpasswod===  this.password;
- }
+ users_data.methods.comparePassword=async function(candidatePassword){
+   return await bcrypt.compare(candidatePassword,this.password)}
 
  users_data.statics.findEmail=function(email){
    return this.findOne({email});
