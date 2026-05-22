@@ -6,7 +6,8 @@ const{Schema,model}=mongoose;
     username: String,
     email:String,
     password:String,
-    number:Number
+    number:Number,
+    refreshToken:{type:String,default:null}
  })
 users_data.pre('save',async function (next){
 if(!this.isModified('password')) 

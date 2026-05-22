@@ -2,6 +2,7 @@ import express from "express";
 import 'dotenv/config'; // This loads variables immediately
 import connectDB from './config/dbConnection.js';
 import user_information from "./Model/User.js";
+import { tokenGenerator,refreshTokenGenerator } from "./services/tokenServics.js";
 connectDB();
 const app =express();
 const PORT=3005;
@@ -21,17 +22,38 @@ res.json(data)
   }
 
  })
+
+
  app.post('/login',async(req,res)=>{
 const {email,password}=req.body;
 const findData= await user_information.findEmail(email);
 
 const match=findData.comparePassword(password);
-if(match){
+if(!match){res.json({message :"you are invalid crenditial"})}
+  const token = tokenGenerator(findData);
+  const refreshToiken=  refreshTokenGenerator(findData);
+
+  findData.refreshToken= refreshToiken;
+  findData.save();
+  
+  res.json({
+    message: "Login successful",
+    token: token,
+    user: {
+      id: findData.id,
+      email: findData.email,
+      role: findData.role,
+      password:findData.password,
+      refreshToken:findData.refreshToken
+    }
+  });
   res.json({message :"you are welcome"})
-}else{
-  res.json({message :"you are invalid crenditial"})
-}
+  
+
  })
+
+
+
  app.listen(PORT,()=>{
   console.log(`server running on port${PORT}`)
  })
