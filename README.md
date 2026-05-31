@@ -2,7 +2,7 @@ This repository contains a series of four backend projects designed to master No
 
 ## 📁 Project Structure
 
-1. **Task Manager API** (Current) - CRUD operations with MongoDB.
-2. **Project 2** - 
-3. **Project 3** - 
+1. **Task Manager API**  - CRUD operations with MongoDB.
+2. **Authentication API** -API for verifying the identity of a user 
+3. **Blog API** (current)- able to store and view blog
 4. **Project 4** - 
