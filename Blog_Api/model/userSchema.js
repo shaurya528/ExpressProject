@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-
+import bcrypt  from "bcrypt";
 const {Schema,model}=mongoose;
-const user_Schema=new Schema({
+const usersSchema=new Schema({
     username:{type: String, 
     required: [true, 'Username is required'], 
     unique: true, 
@@ -26,5 +26,15 @@ const user_Schema=new Schema({
     default: 'user' 
   }
 }, { timestamps: true });
-const user_model= model('Users',user_Schema);
-export default user_model
+
+
+usersSchema.pre('save',async function(next){
+  if(!this.isModified('password')){
+    return next
+  }
+  const salt=await bcrypt.genSalt(10);
+  this.password=await bcrypt.hash(this.password,salt);
+  next
+})
+const userModel= model('Users',usersSchema);
+export default userModel

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const {Schema,model}= mongoose;
-const comment_schema=mongoose.Schema({
+const commentsSchema=new Schema({
     content:{
         type:String,
         required:true,
@@ -19,7 +19,7 @@ const comment_schema=mongoose.Schema({
   }
 }, { timestamps: true });
 
-comment_schema.index({post:1});
-const comment_model=model('comment',comment_schema);
-export default comment_model
+commentsSchema.index({post:1});
+const commentModel=model('comment',commentsSchema);
+export default commentModel
     

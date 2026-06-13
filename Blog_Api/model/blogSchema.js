@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const {Schema,model}= mongoose;
-const blog_schema= mongoose.Schema({
+const blogsSchema= new Schema({
     title:{
         type:String,
         required:true,
@@ -37,15 +37,15 @@ const blog_schema= mongoose.Schema({
     },{
 timestamps:true,
 toObject:{virtuals:true},
-toJSON:{virtual:true}
+toJSON:{virtuals:true}
     }
 )
-blog_schema.index({slug:1});
-blog_schema.virtual('comments',{
+
+blogsSchema.virtual('comments',{
     ref:'comment',
     localField:'_id',
     foreignField:'post'
 });
 
-const post_model= model('Post',blog_schema);
-export default post_model
+const postModel= model('Post',blogsSchema);
+export default postModel
