@@ -4,5 +4,5 @@ This repository contains a series of four backend projects designed to master No
 
 1. **Task Manager API**  - CRUD operations with MongoDB.
 2. **Authentication API** -API for verifying the identity of a user 
-3. **Blog API** (current)- able to store and view blog
-4. **Project 4** - 
+3. **Blog API** - able to store and view blog
+4. **Project 4** -

@@ -1,5 +1,5 @@
 
-import userModel from "../model/userSchema.js";
+import userModel from "../model/user_schema.js";
 
 export const userSignup = async (req, res) => {
   try {

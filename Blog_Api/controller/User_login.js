@@ -1,5 +1,5 @@
 
-import userModel from "../model/userSchema.js";
+import userModel from "../model/user_schema.js";
 import bcrypt from "bcrypt";
 import { jwtTokenGenerator } from "../services/token_generator.js";
 
