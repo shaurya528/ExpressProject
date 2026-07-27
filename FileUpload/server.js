@@ -12,9 +12,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Mount routes
+try{
+    app.get("/ping", (req, res) => res.send("pong"));
+    console.log("everything fine")
+
+}catch(err){
+    console.error(err,"unable to do anything")
+}
 app.use("/api/auth", authRoutes);
 app.use("/api/files", fileRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT =  3004;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
